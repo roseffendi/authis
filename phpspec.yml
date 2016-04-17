@@ -1,0 +1,5 @@
+suites:
+    authis:
+        namespace: Roseffendi\Authis
+        psr4_prefix: Roseffendi\Authis
+        spec_prefix: tests

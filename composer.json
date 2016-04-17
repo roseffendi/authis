@@ -1,0 +1,21 @@
+{
+    "name": "roseffendi/authis",
+    "description": "Authorization system package",
+    "type": "composer",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Roseffendi",
+            "email": "oii@roseffendi.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Roseffendi\\Authis\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~2.0"
+    }
+}
