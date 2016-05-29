@@ -19,7 +19,7 @@ class AuthisServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('Roseffendi\Authis\User', 'Roseffendi\Authis\Laravel\User');
-
+        $this->app->singleton('\Roseffendi\Authis\Authis', 'Roseffendi\Authis\Authis');
         $this->app->singleton('authis', 'Roseffendi\Authis\Authis');
     }
 

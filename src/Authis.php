@@ -150,7 +150,7 @@ class Authis
      */
     public function forResource(Resource $resource)
     {
-        return new self($this->user, $resource, $this->intercepts, $this->precondition, $this->aliases, $this->abilityPrecondtions);
+        return new self($this->user, $resource, $this->precondition, $this->intercepts, $this->aliases, $this->abilityPrecondtions);
     }
 
     /**
@@ -161,7 +161,7 @@ class Authis
      */
     public function forUser(User $user)
     {
-        return new self($user, $this->resource, $this->intercepts, $this->precondition, $this->aliases, $this->abilityPrecondtions);
+        return new self($user, $this->resource, $this->precondition, $this->intercepts, $this->aliases, $this->abilityPrecondtions);
     }
 
     /**

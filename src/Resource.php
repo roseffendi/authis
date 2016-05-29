@@ -6,6 +6,7 @@ interface Resource
 {
     /**
      * Determine if resource belong to user
+     * 
      * @param  User   $user
      * @return boolean
      */
