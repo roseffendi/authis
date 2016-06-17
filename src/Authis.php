@@ -176,7 +176,7 @@ class Authis
             return false;
         }
 
-        return call_user_func_array($this->intercepts[$ability], [$this->user, $ability]);
+        return call_user_func_array($this->intercepts[$ability], [$this->user, $ability, $this->resource]);
     }
 
     /**
