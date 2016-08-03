@@ -65,23 +65,24 @@ class Authis
      */
     public function check($ability)
     {
+        $return = true;
         $ability = $this->applyAlias($ability);
 
         if(!$this->applyPrecondition($ability)) {
-            return false;
+            $return = false;
         }
 
-        // Intercept was applied and return true
-        if($this->applyIntercept($ability)) {
-            return true;
+        // Intercept was applied and return false
+        if(!$this->applyIntercept($ability)) {
+            $return = false;
         }
 
         // Checking if user has ability and the owner of the resource
-        if(( in_array($ability, $this->user->abilities()) ) && ($this->applyForResource())) {
-            return true;
+        if(( !in_array($ability, $this->user->abilities()) ) || (!$this->applyForResource())) {
+            $return = false;
         }
 
-        return false;
+        return $return;
     }
 
     /**
@@ -173,7 +174,7 @@ class Authis
     protected function applyIntercept($ability)
     {
         if( !isset($this->intercepts[$ability])) {
-            return false;
+            return true;
         }
 
         return call_user_func_array($this->intercepts[$ability], [$this->user, $ability, $this->resource]);
